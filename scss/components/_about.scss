@@ -1,0 +1,110 @@
+@use '../base/'as *;
+@use '../abstracts/'as a;
+
+.about {
+  max-width: 768px;
+  height: 667px;
+  margin: 0 auto;
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.4),
+      rgba(255, 255, 255, 0.4)
+    ),
+    url('../images/pexels-christian-domingues-731022.jpg');
+  background-position: right;
+  background-size: cover;
+  @include a.breakpoint(tablet) {
+    max-width: 992px;
+  }
+  @include a.breakpoint(laptop) {
+    max-width: 1200px;
+  }
+  @include a.breakpoint(desktop) {
+    max-width: 1920px;
+  }
+  & .about-container {
+    width: 90%;
+    height: 634px;
+    margin-left: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 33px;
+    & .about-title {
+      width: auto;
+      color: $clr--dark-blue;
+      font-family: $ff--bitter;
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      text-align: center;
+      @include a.breakpoint(tablet) {
+        font-size: 28px;
+      }
+      @include a.breakpoint(desktop) {
+        font-size: 36px;
+        padding-bottom: 36px;
+      }
+    }
+    & .about-blurb {
+      max-width: 327px;
+      font-family: $ff--raleway;
+      color: $clr--dark-blue;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-align: center;
+      line-height: 20px;
+      padding-bottom: 75px;
+      @include a.breakpoint(tablet) {
+        font-size: 16px;
+        line-height: 24px;
+        max-width: 480px;
+      }
+      @include a.breakpoint(desktop) {
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 36px;
+        max-width: 600px;
+        padding-bottom: 48px;
+      }
+    }
+    & .about-list {
+      & ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        & li {
+          font-family: $ff--raleway;
+          color: $clr--dark-blue;
+          font-size: 14px;
+          font-weight: 700;
+          line-height: 48px;
+          @include a.breakpoint(tablet) {
+            font-size: 16px;
+          }
+          @include a.breakpoint(desktop) {
+            font-size: 24px;
+            line-height: 60px;
+          }
+          & .check {
+            margin-right: 10px;
+            position: relative;
+            top: 3px;
+            & img {
+              width: 18px;
+              @include a.breakpoint(tablet) {
+                width: 20px;
+              }
+              @include a.breakpoint(desktop) {
+                width: 24px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,243 @@
+@use '../base/'as *;
+@use '../abstracts/'as a;
+
+.footer {
+  max-width: 768px;
+  height: auto;
+  margin: 0 auto;
+  background-color: $clr--yellow;
+  padding-top: 33px;
+  padding-bottom: 33px;
+  @include a.breakpoint(tablet) {
+    max-width: 992px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  @include a.breakpoint(laptop) {
+    max-width: 1200px;
+  }
+  @include a.breakpoint(desktop) {
+    max-width: 1920px;
+  }
+  .footer-container {
+    width: 90%;
+    height: auto;
+    margin-left: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @include a.breakpoint(tablet) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      width: 96%;
+      margin-left: 2%;
+    }
+    & .footer-box1 {
+      width: 100%;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      @include a.breakpoint(tablet) {
+        order: 2;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+      }
+      & .sign-up-text {
+        font-family: $ff--raleway;
+        color: $clr--dark-blue;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 24px;
+        letter-spacing: 0.5px;
+        padding-bottom: 24px;
+        @include a.breakpoint(tablet) {
+          font-size: 14px;
+          line-height: 18px;
+          padding-bottom: 0;
+        }
+        @include a.breakpoint(desktop) {
+          font-size: 18px;
+          line-height: 24px;
+        }
+      }
+      & .sign-up-form {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        @include a.breakpoint(tablet) {
+          width: 98%;
+          margin-left: 1px;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          padding-top: 12px;
+        }
+        & input[type='email'] {
+          width: 300px;
+          height: 30px;
+          margin-left: calc(50% - 150px);
+          display: inline-block;
+          background-color: #c4c4c4;
+          border: none;
+          outline: none;
+          padding-left: 12px;
+          @include a.breakpoint(tablet) {
+            width: 215px;
+            margin-left: 0;
+          }
+          @include a.breakpoint(laptop) {
+            width: 300px;
+          }
+        }
+        & .subscribe {
+          margin-left: calc(50% - 75px);
+          margin-top: 24px;
+          margin-bottom: 24px;
+          @include a.breakpoint(tablet) {
+            margin: 0 0 0 10px;
+          }
+        }
+      }
+    }
+    & .footer-box2 {
+      width: 100%;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: $ff--raleway;
+      color: $clr--dark-blue;
+      @include a.breakpoint(tablet) {
+        order: 1;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+      }
+      & .phone {
+        width: 100%;
+        text-align: center;
+        font-size: 18px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        @include a.breakpoint(tablet) {
+          width: 33%;
+          font-size: 14px;
+          line-height: 16px;
+          text-align: left;
+        }
+        @include a.breakpoint(desktop) {
+          font-size: 18px;
+          line-height: 24px;
+        }
+        & .phone-icon {
+          position: relative;
+          top: 3px;
+          margin-right: 5px;
+          img {
+            width: 18px;
+            @include a.breakpoint(tablet) {
+              width: 14px;
+            }
+            @include a.breakpoint(desktop) {
+              width: 18px;
+            }
+          }
+        }
+      }
+      & .footer-links {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 18px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        line-height: 30px;
+        padding-top: 33px;
+        padding-bottom: 12px;
+        @include a.breakpoint(tablet) {
+          width: 65%;
+          flex-direction: row;
+          justify-content: flex-end;
+          align-items: flex-start;
+          font-size: 14px;
+          line-height: 18px;
+          padding-top: 0;
+          padding-bottom: 0;
+          padding-right: 10px;
+        }
+        @include a.breakpoint(laptop) {
+          justify-content: flex-start;
+        }
+        @include a.breakpoint(desktop) {
+          font-size: 18px;
+          line-height: 24px;
+        }
+        & a {
+          text-decoration: none;
+          color: $clr--dark-blue;
+          transition: all 300ms ease-in;
+          @include a.breakpoint(tablet) {
+            &:first-child {
+              margin-right: 12px;
+            }
+          }
+          @include a.breakpoint(desktop) {
+            &:first-child {
+              margin-right: 48px;
+            }
+          }
+          &:hover {
+            transform: scale(110%);
+          }
+        }
+      }
+      & .social-icons {
+        width: 67%;
+        padding-top: 33px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        @include a.breakpoint(tablet) {
+          max-width: 200px;
+          padding-top: 24px;
+        }
+        & a {
+          img {
+            width: 18px;
+            @include a.breakpoint(desktop) {
+              width: 20px;
+            }
+          }
+          &:hover {
+            position: relative;
+
+            &::before {
+              content: '';
+              display: block;
+              position: absolute;
+              width: 24px;
+              height: 3px;
+              bottom: -6px;
+              left: -3px;
+              background-color: $clr--dark-blue;
+            }
+          }
+        }
+      }
+    }
+  }
+}

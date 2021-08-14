@@ -1,0 +1,11 @@
+@use '../base/'as *;
+@use '../abstracts/'as a;
+
+body {
+  background-color: #f2f2f2;
+}
+
+.container {
+  width: 100vw;
+  height: auto;
+}

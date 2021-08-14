@@ -1,0 +1,149 @@
+@use '../base/'as *;
+@use '../abstracts/'as a;
+
+.reviews {
+  max-width: 768px;
+  height: auto;
+  margin: 0 auto;
+  padding-top: 33px;
+  padding-bottom: 33px;
+  background-color: $clr--background;
+  @include a.breakpoint(tablet) {
+    max-width: 992px;
+  }
+  @include a.breakpoint(laptop) {
+    max-width: 1200px;
+  }
+  @include a.breakpoint(desktop) {
+    max-width: 1920px;
+  }
+  & .reviews-container {
+    width: 90%;
+    margin-left: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-family: $ff--raleway;
+    & .reviews-title {
+      width: auto;
+      color: $clr--dark-blue;
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      margin-bottom: 33px;
+      text-align: center;
+      @include a.breakpoint(tablet) {
+        font-size: 28px;
+      }
+      @include a.breakpoint(desktop) {
+        font-size: 36px;
+      }
+    }
+    & .reviews-box {
+      width: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      @include a.breakpoint(tablet) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+      }
+      @include a.breakpoint(desktop) {
+        max-width: 1200px;
+        height: 750px;
+      }
+      & .reviews-item {
+        width: 240px;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        background-color: $clr--white;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        box-shadow: 10px 10px 10px lightgray;
+        @include a.breakpoint(tablet) {
+          max-width: 300px;
+          margin-bottom: 48px;
+          margin-left: 5px;
+          margin-right: 5px;
+        }
+        @include a.breakpoint(laptop) {
+          width: 300px;
+        }
+        &:last-child {
+          margin-bottom: 0;
+          @include a.breakpoint(tablet) {
+            margin-bottom: 48px;
+          }
+        }
+        & .reviews-stars {
+          padding-top: 20px;
+          padding-bottom: 12px;
+          & .star {
+            & img {
+              width: 18px;
+              @include a.breakpoint(tablet) {
+                width: 20px;
+              }
+              @include a.breakpoint(desktop) {
+                width: 24px;
+              }
+            }
+          }
+        }
+      }
+      & .reviews-blurb {
+        padding-bottom: 12px;
+        color: $clr--dark-blue;
+        font-size: 14px;
+        font-weight: 400;
+        letter-spacing: 0.5px;
+        text-align: center;
+        line-height: 20px;
+        @include a.breakpoint(tablet) {
+          font-size: 16px;
+          line-height: 22px;
+          padding-bottom: 16px;
+          padding-left: 10px;
+          padding-right: 10px;
+        }
+        @include a.breakpoint(desktop) {
+          font-size: 20px;
+          line-height: 28px;
+          padding-bottom: 20px;
+        }
+      }
+      & .reviews-name {
+        color: $clr--dark-blue;
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        text-align: center;
+        @include a.breakpoint(tablet) {
+          font-size: 16px;
+        }
+      }
+      & .reviews-date {
+        color: $clr--dark-blue;
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 300;
+        font-style: italic;
+        letter-spacing: 0.5px;
+        text-align: center;
+        padding-bottom: 20px;
+        @include a.breakpoint(tablet) {
+          font-size: 16px;
+          line-height: 24px;
+          padding-bottom: 24px;
+        }
+      }
+    }
+  }
+}

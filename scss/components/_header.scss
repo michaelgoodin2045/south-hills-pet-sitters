@@ -1,0 +1,168 @@
+@use '../base/'as *;
+@use '../abstracts/'as a;
+
+.header {
+  max-width: 768px;
+  height: 667px;
+  margin: 0 auto;
+  background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+    url('../images/home-image-desktop.jpg');
+  background-position-x: 70%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  @include a.breakpoint(tablet) {
+    max-width: 992px;
+    height: 1024px;
+  }
+  @include a.breakpoint(laptop) {
+    max-width: 1200px;
+    height: 768px;
+  }
+  @include a.breakpoint(desktop) {
+    max-width: 1920px;
+    height: 100vh;
+    overflow-x: auto;
+  }
+  & .navbar {
+    width: 100%;
+    height: 60px;
+    background-color: $clr--yellow;
+    opacity: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    overflow-x: hidden;
+    & .logo {
+      color: $clr--dark-blue;
+      font-family: $ff--bitter;
+      font-size: 24px;
+      font-weight: 700;
+      margin-left: 24px;
+      @include a.breakpoint(tablet) {
+        margin-left: 3%;
+        font-size: 30px;
+      }
+      @include a.breakpoint(tablet) {
+        font-size: 36px;
+      }
+      @include a.breakpoint(desktop) {
+        font-size: 42px;
+      }
+    }
+    & .navbar-links {
+      display: none;
+      position: absolute;
+      top: 60px;
+      left: 50%;
+      width: 50%;
+      height: 400px;
+      background-color: $clr--yellow;
+      z-index: 5;
+      @include a.breakpoint(tablet) {
+        position: unset;
+        display: inline-block;
+        top: 0;
+        width: 40%;
+        height: 60px;
+        margin-right: 3%;
+      }
+      & ul {
+        margin-top: 10%;
+        height: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        font-family: $ff--bitter;
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        line-height: 25px;
+        @include a.breakpoint(tablet) {
+          margin-top: 0;
+          height: 60px;
+          flex-direction: row;
+          justify-content: space-between;
+        }
+        & a {
+          text-decoration: none;
+          color: $clr--dark-blue;
+          transition: all 300ms ease-in;
+          &:hover {
+            font-size: 24px;
+          }
+        }
+      }
+    }
+    & .hamburger {
+      width: 30px;
+      height: 15px;
+      margin-right: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      @include a.breakpoint(tablet) {
+        display: none;
+      }
+      & .bar {
+        width: 100%;
+        height: 3px;
+        border-radius: 25px;
+        background-color: $clr--dark-blue;
+        transition: all 400ms ease-in;
+      }
+    }
+  }
+  & .slogan {
+    position: relative;
+    top: 60px;
+    max-width: 327px;
+    height: auto;
+    font-family: $ff--perm-marker;
+    font-size: 36px;
+    line-height: 60px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: $clr--yellow;
+    margin-left: 24px;
+    @include a.breakpoint(tablet) {
+      margin-left: 3%;
+      font-size: 40px;
+      max-width: 400px;
+    }
+    @include a.breakpoint(desktop) {
+      top: 100px;
+      font-size: 48px;
+      max-width: 480px;
+    }
+  }
+  & .cta {
+    width: auto;
+    height: auto;
+    position: relative;
+    top: 350px;
+    margin-left: calc(50% - 125px);
+    @include a.breakpoint(tablet) {
+      top: 647px;
+    }
+    @include a.breakpoint(laptop) {
+      top: 430px;
+    }
+    @include a.breakpoint(desktop) {
+      top: 540px;
+    }
+  }
+}
+.toggle .bar.top {
+  transform: rotate(-405deg) translate(-3px, 6px);
+}
+
+.toggle .bar.middle {
+  transform: translateX(100px);
+}
+
+.toggle .bar.bottom {
+  transform: rotate(405deg) translate(-3px, -6px);
+}
